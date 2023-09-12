@@ -16,7 +16,7 @@ def home_page():
     data_set ={'Page':'Home', 
                'Message':'Successfully loaded the home page',
                'current_day': weekday_str, 
-               'utc_time': utc_time.isoformat()}
+               'utc_time': utc_time.isoformat().split('.')[0]}
     
     
     
@@ -26,7 +26,7 @@ def home_page():
 def request_page():
     user_query = str(request.args.get('user'))
     data_set ={'Slack_name':f'{user_query}',
-               'current_day': weekday_str,'utc_time': utc_time.isoformat(),
+               'current_day': weekday_str,'utc_time': utc_time.isoformat().split('.')[0],
                'track':'backend',
                "github_file_url": "https://github.com/Dreal-Godson2311/stage-one.git",
                "github_repo_url": "https://github.com/Dreal-Godson2311/stage-one/blob/main/temi-ojo-slack/temi-ojoo.py",
