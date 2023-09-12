@@ -1,6 +1,4 @@
-import pprint
 from flask import *
-import json, time
 import datetime
 from flask import Flask, request, jsonify
 
@@ -22,16 +20,24 @@ def home_page():
     
     return jsonify(data_set)
 
-@app.route('/user/', methods=['GET'])
+@app.route('/temi-ojo.com/', methods=['GET'])
 def request_page():
-    user_query = str(request.args.get('user'))
+    user_query = str(request.args.get('slack_name'))
+    track_query=str(request.args.get('track'))
     data_set ={'Slack_name':f'{user_query}',
                'current_day': weekday_str,'utc_time': utc_time.isoformat().split('.')[0],
-               'track':'backend',
+               'track':f'{track_query}',
                "github_file_url": "https://github.com/Dreal-Godson2311/stage-one.git",
                "github_repo_url": "https://github.com/Dreal-Godson2311/stage-one/blob/main/temi-ojo-slack/temi-ojoo.py",
                "status_code": 200}
     
+    
+    
+    
+    return jsonify(data_set)
+
+if __name__ == '__main__':
+    app.run(port=7777)
     
     
     
