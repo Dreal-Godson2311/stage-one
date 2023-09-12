@@ -28,7 +28,7 @@ def request_page():
     data_set ={'Slack_name':f'{user_query}',
                'current_day': weekday_str,'utc_time': utc_time.isoformat(),
                'track':'backend',
-               "github_file_url": "https://github.com/username/repo/blob/main/file_name.ext",
+               "github_file_url": "https://github.com/Dreal-Godson2311/stage-one.git",
                "github_repo_url": "https://github.com/Dreal-Godson2311/stage-one/blob/main/temi-ojo-slack/temi-ojoo.py",
                "status_code": 200}
     
